@@ -1,0 +1,20 @@
+####################
+# IDEs and editors
+####################
+
+# VS Code
+.vscode/
+
+# Intellij IDEA
+.idea/
+
+# Eclipse
+.project
+.classpath
+
+#######################
+# Tools and Utilities
+#######################
+
+# Gradle
+.gradle/
