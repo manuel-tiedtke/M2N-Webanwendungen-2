@@ -68,6 +68,10 @@ textarea.expanding {
     font-size: 1rem;
 }
 
+.border-top {
+    padding-top: 10px;
+}
+
 @media (min-width: 654px) {
     .hero .heading h1 {
         font-size: 5rem;
