@@ -78,3 +78,9 @@ textarea.expanding {
         font-size: 1.5rem;
     }
 }
+
+.link-section {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 0.5rem;
+}
