@@ -1,10 +1,9 @@
-group 'org.m2n.webapplications2'
-version '0.1.0-alpha'
-
 plugins {
     id 'war'
 }
 
+group 'org.m2n.webapplications2'
+version '0.1.0-alpha'
 
 dependencies {
     // https://mvnrepository.com/artifact/org.glassfish.jersey.containers/jersey-container-servlet
@@ -20,4 +19,9 @@ dependencies {
     // https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl-api
     compile group: 'javax.servlet.jsp.jstl', name: 'jstl-api', version: '1.2'
 }
+
+
+
+
+
 
