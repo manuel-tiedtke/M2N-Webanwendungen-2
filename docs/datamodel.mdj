@@ -36,8 +36,8 @@
 										"$ref": "AAAAAAFqSfwnHhy4Qeo="
 									},
 									"font": "Arial;13;1",
-									"left": 264,
-									"top": 157,
+									"left": 184,
+									"top": 45,
 									"width": 185,
 									"height": 13,
 									"text": "Flash Card"
@@ -62,8 +62,8 @@
 												"$ref": "AAAAAAFqSf21mR0PC44="
 											},
 											"font": "Arial;13;0",
-											"left": 269,
-											"top": 180,
+											"left": 189,
+											"top": 68,
 											"width": 175,
 											"height": 13
 										},
@@ -77,8 +77,8 @@
 												"$ref": "AAAAAAFqSf0l2hz6s94="
 											},
 											"font": "Arial;13;0",
-											"left": 269,
-											"top": 195,
+											"left": 189,
+											"top": 83,
 											"width": 175,
 											"height": 13
 										},
@@ -92,8 +92,8 @@
 												"$ref": "AAAAAAFqSf1WNx0BlLM="
 											},
 											"font": "Arial;13;0",
-											"left": 269,
-											"top": 210,
+											"left": 189,
+											"top": 98,
 											"width": 175,
 											"height": 13
 										},
@@ -107,22 +107,22 @@
 												"$ref": "AAAAAAFqSf1hsx0IkTo="
 											},
 											"font": "Arial;13;0",
-											"left": 269,
-											"top": 225,
+											"left": 189,
+											"top": 113,
 											"width": 175,
 											"height": 13
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 264,
-									"top": 175,
+									"left": 184,
+									"top": 63,
 									"width": 185,
 									"height": 68
 								}
 							],
 							"font": "Arial;13;0",
-							"left": 264,
-							"top": 152,
+							"left": 184,
+							"top": 40,
 							"width": 185,
 							"height": 91,
 							"nameLabel": {
@@ -149,8 +149,8 @@
 										"$ref": "AAAAAAFqSfx/CxzZ3Co="
 									},
 									"font": "Arial;13;1",
-									"left": 264,
-									"top": 269,
+									"left": 184,
+									"top": 157,
 									"width": 183.60693359375,
 									"height": 13,
 									"text": "Category"
@@ -167,6 +167,21 @@
 									"subViews": [
 										{
 											"_type": "ERDColumnView",
+											"_id": "AAAAAAFqU1wkqkNptBM=",
+											"_parent": {
+												"$ref": "AAAAAAFqSfx/CxzbZis="
+											},
+											"model": {
+												"$ref": "AAAAAAFqU1wko0Nmrv4="
+											},
+											"font": "Arial;13;0",
+											"left": 189,
+											"top": 180,
+											"width": 173.60693359375,
+											"height": 13
+										},
+										{
+											"_type": "ERDColumnView",
 											"_id": "AAAAAAFqSf84JB0k544=",
 											"_parent": {
 												"$ref": "AAAAAAFqSfx/CxzbZis="
@@ -175,8 +190,8 @@
 												"$ref": "AAAAAAFqSf83/x0hDc0="
 											},
 											"font": "Arial;13;0",
-											"left": 269,
-											"top": 292,
+											"left": 189,
+											"top": 195,
 											"width": 173.60693359375,
 											"height": 13
 										},
@@ -190,8 +205,8 @@
 												"$ref": "AAAAAAFqSf/tHh0qtUI="
 											},
 											"font": "Arial;13;0",
-											"left": 269,
-											"top": 307,
+											"left": 189,
+											"top": 210,
 											"width": 173.60693359375,
 											"height": 13
 										},
@@ -205,24 +220,24 @@
 												"$ref": "AAAAAAFqSgBjnR0yaX4="
 											},
 											"font": "Arial;13;0",
-											"left": 269,
-											"top": 322,
+											"left": 189,
+											"top": 225,
 											"width": 173.60693359375,
 											"height": 13
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 264,
-									"top": 287,
+									"left": 184,
+									"top": 175,
 									"width": 183.60693359375,
-									"height": 53
+									"height": 68
 								}
 							],
 							"font": "Arial;13;0",
-							"left": 264,
-							"top": 264,
+							"left": 184,
+							"top": 152,
 							"width": 183.60693359375,
-							"height": 76,
+							"height": 91,
 							"nameLabel": {
 								"$ref": "AAAAAAFqSfx/CxzadkI="
 							},
@@ -248,8 +263,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 502,
-									"top": 245,
+									"left": 422,
+									"top": 137,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -265,8 +280,8 @@
 										"$ref": "AAAAAAFqSfyw2hzpQvI="
 									},
 									"font": "Arial;13;0",
-									"left": 473,
-									"top": 179,
+									"left": 393,
+									"top": 67,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 30,
@@ -282,8 +297,8 @@
 										"$ref": "AAAAAAFqSfyw2hzpQvI="
 									},
 									"font": "Arial;13;0",
-									"left": 472,
-									"top": 312,
+									"left": 392,
+									"top": 208,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 30,
@@ -300,7 +315,7 @@
 								"$ref": "AAAAAAFqSfwnHhy4Qeo="
 							},
 							"lineStyle": 2,
-							"points": "448:200;488:200;488:304;447:304",
+							"points": "368:88;408:88;408:200;367:200",
 							"nameLabel": {
 								"$ref": "AAAAAAFqSfyw2hzqjtQ="
 							},
@@ -310,6 +325,125 @@
 							"headNameLabel": {
 								"$ref": "AAAAAAFqSfyw2xzsm84="
 							}
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFqU11BSEN6Bto=",
+							"_parent": {
+								"$ref": "AAAAAAFqSfus6BywbOw="
+							},
+							"font": "Arial;13;0",
+							"left": 24,
+							"top": 192,
+							"width": 137,
+							"height": 65,
+							"text": "SQLite has no special DATE type, it uses the TEXT type for dates."
+						},
+						{
+							"_type": "RectangleView",
+							"_id": "AAAAAAFqU18PY0ORgCc=",
+							"_parent": {
+								"$ref": "AAAAAAFqSfus6BywbOw="
+							},
+							"font": "Arial;13;0",
+							"left": 24,
+							"top": 24,
+							"width": 137,
+							"height": 89
+						},
+						{
+							"_type": "ERDEntityView",
+							"_id": "AAAAAAFqU18aaUOW4ok=",
+							"_parent": {
+								"$ref": "AAAAAAFqSfus6BywbOw="
+							},
+							"model": {
+								"$ref": "AAAAAAFqU18aaUOU0aY="
+							},
+							"subViews": [
+								{
+									"_type": "LabelView",
+									"_id": "AAAAAAFqU18aaUOXkdo=",
+									"_parent": {
+										"$ref": "AAAAAAFqU18aaUOW4ok="
+									},
+									"font": "Arial;13;1",
+									"left": 32,
+									"top": 61,
+									"width": 121,
+									"height": 13,
+									"text": "App"
+								},
+								{
+									"_type": "ERDColumnCompartmentView",
+									"_id": "AAAAAAFqU18aaUOY+xg=",
+									"_parent": {
+										"$ref": "AAAAAAFqU18aaUOW4ok="
+									},
+									"model": {
+										"$ref": "AAAAAAFqU18aaUOU0aY="
+									},
+									"subViews": [
+										{
+											"_type": "ERDColumnView",
+											"_id": "AAAAAAFqU182YEOk1I8=",
+											"_parent": {
+												"$ref": "AAAAAAFqU18aaUOY+xg="
+											},
+											"model": {
+												"$ref": "AAAAAAFqU182QEOh2rc="
+											},
+											"font": "Arial;13;0",
+											"left": 37,
+											"top": 84,
+											"width": 111,
+											"height": 13
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 32,
+									"top": 79,
+									"width": 121,
+									"height": 23
+								}
+							],
+							"font": "Arial;13;0",
+							"left": 32,
+							"top": 56,
+							"width": 121,
+							"height": 46,
+							"nameLabel": {
+								"$ref": "AAAAAAFqU18aaUOXkdo="
+							},
+							"columnCompartment": {
+								"$ref": "AAAAAAFqU18aaUOY+xg="
+							}
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFqU2DmMUOtGoQ=",
+							"_parent": {
+								"$ref": "AAAAAAFqSfus6BywbOw="
+							},
+							"font": "Arial;13;0",
+							"left": 24,
+							"top": 136,
+							"width": 137,
+							"height": 51,
+							"text": "SQLite cannot use a maximum string length."
+						},
+						{
+							"_type": "UMLTextView",
+							"_id": "AAAAAAFqU2He2UO4w6s=",
+							"_parent": {
+								"$ref": "AAAAAAFqSfus6BywbOw="
+							},
+							"font": "Arial;18;0",
+							"left": 56,
+							"top": 24,
+							"width": 72.0244140625,
+							"height": 30,
+							"text": "Helpers"
 						}
 					]
 				},
@@ -359,7 +493,7 @@
 								"$ref": "AAAAAAFqSfwnHRy2K2M="
 							},
 							"name": "Id",
-							"type": "INT",
+							"type": "INTEGER",
 							"length": 0,
 							"primaryKey": true
 						},
@@ -370,7 +504,7 @@
 								"$ref": "AAAAAAFqSfwnHRy2K2M="
 							},
 							"name": "Question",
-							"type": "VARCHAR",
+							"type": "TEXT",
 							"length": 0
 						},
 						{
@@ -380,7 +514,7 @@
 								"$ref": "AAAAAAFqSfwnHRy2K2M="
 							},
 							"name": "Answer",
-							"type": "VARCHAR",
+							"type": "TEXT",
 							"length": 0
 						},
 						{
@@ -390,7 +524,7 @@
 								"$ref": "AAAAAAFqSfwnHRy2K2M="
 							},
 							"name": "DueDate",
-							"type": "DATE",
+							"type": "TEXT",
 							"length": 0
 						}
 					]
@@ -405,14 +539,25 @@
 					"columns": [
 						{
 							"_type": "ERDColumn",
+							"_id": "AAAAAAFqU1wko0Nmrv4=",
+							"_parent": {
+								"$ref": "AAAAAAFqSfx/CxzX+/Q="
+							},
+							"name": "Id",
+							"type": "INTEGER",
+							"length": 0,
+							"primaryKey": true
+						},
+						{
+							"_type": "ERDColumn",
 							"_id": "AAAAAAFqSf83/x0hDc0=",
 							"_parent": {
 								"$ref": "AAAAAAFqSfx/CxzX+/Q="
 							},
 							"name": "Name",
-							"type": "CHAR",
+							"type": "TEXT",
 							"length": 0,
-							"primaryKey": true
+							"unique": true
 						},
 						{
 							"_type": "ERDColumn",
@@ -421,7 +566,7 @@
 								"$ref": "AAAAAAFqSfx/CxzX+/Q="
 							},
 							"name": "Tagline",
-							"type": "VARCHAR",
+							"type": "TEXT",
 							"length": 0
 						},
 						{
@@ -431,7 +576,27 @@
 								"$ref": "AAAAAAFqSfx/CxzX+/Q="
 							},
 							"name": "Description",
-							"type": "VARCHAR",
+							"type": "TEXT",
+							"length": 0
+						}
+					]
+				},
+				{
+					"_type": "ERDEntity",
+					"_id": "AAAAAAFqU18aaUOU0aY=",
+					"_parent": {
+						"$ref": "AAAAAAFqSfus6ByvUyU="
+					},
+					"name": "App",
+					"columns": [
+						{
+							"_type": "ERDColumn",
+							"_id": "AAAAAAFqU182QEOh2rc=",
+							"_parent": {
+								"$ref": "AAAAAAFqU18aaUOU0aY="
+							},
+							"name": "version",
+							"type": "TEXT",
 							"length": 0
 						}
 					]
