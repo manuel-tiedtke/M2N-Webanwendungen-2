@@ -9,10 +9,12 @@ public class Logging {
 
     public static void exception(Exception exception) {
         logger.log(Level.WARNING, "An exception occurred", exception);
+        exception.printStackTrace();
     }
 
     public static void debug(String message) {
         logger.log(Level.FINER, message);
+        System.out.println(message);
     }
 
 }
