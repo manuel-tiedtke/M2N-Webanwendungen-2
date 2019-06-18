@@ -24,10 +24,10 @@ VALUES ('Default');
 
 INSERT INTO category (name, tagline, description)
 VALUES
-('Python', 'Dunno', 'Python is awesome'),
-('Food', 'Dunno', 'Eat! Or you''ll starve!'),
-('Health', 'Dunno', 'See category Food to stay healthy'),
-('Hardware', 'Dunno', 'Hardware Hacking Topics');
+('Python', 'Programming Language', 'Python is awesome'),
+('Food', 'Maultaschen', 'Eat! Or you''ll starve!'),
+('Health', 'Sports', 'See category Food to stay healthy'),
+('Hardware', 'Security', 'Hardware Hacking Topics');
 
 -- Test entries for table flashcard2category
 INSERT INTO flashcard2category (flashcardId, categoryId)
