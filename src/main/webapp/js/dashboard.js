@@ -10,9 +10,11 @@ function getCategories() {
 
 function addCategoryToHtml(category) {
     const template = document.getElementById('category-template').content
-    template.querySelector('h5').innerText = category.name
+    template.categoryId = category.id
+    template.querySelector('span').innerText = category.name
     template.querySelector('h6').innerText = category.tagline ? category.tagline : ''
     template.querySelector('p').innerText = category.description ? category.description : ''
+    template.querySelector('.edit-card').href = 'edit-category.html?category=' + category.id
 
     const categoryHtml = document.importNode(template, true)
     const container = document.getElementById('category-container')

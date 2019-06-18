@@ -13,13 +13,17 @@ import java.util.List;
 
 public class DbCategory {
 
-    public static void create(Category category) throws DatabaseException {
+    public static void update(int categoryId, Category category) throws DatabaseException {
         try {
             PreparedStatement statement = Database.getInstance().getConnection()
-                .prepareStatement("INSERT INTO category (name) VALUES (?)");
+                .prepareStatement("UPDATE category SET name = ?, tagline = ?, description = ? WHERE id = ?");
 
             int i = 1;
-            statement.setString(i, category.getName());
+            statement.setString(i++, category.getName());
+            statement.setString(i++, category.getTagline());
+            statement.setString(i++, category.getDescription());
+            statement.setInt(i, categoryId);
+
 
             statement.executeUpdate();
         } catch (SQLException e) {
