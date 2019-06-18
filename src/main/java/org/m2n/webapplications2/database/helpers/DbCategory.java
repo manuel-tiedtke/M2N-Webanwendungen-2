@@ -50,4 +50,27 @@ public class DbCategory {
         }
     }
 
+    public static Category get(int categoryId) throws DatabaseException {
+        try {
+            PreparedStatement statement = Database.getInstance().getConnection()
+                .prepareStatement("SELECT * FROM category WHERE id = ?");
+
+            int i = 1;
+            statement.setInt(i, categoryId);
+
+            ResultSet resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                Category category = new Category();
+                category.setName(resultSet.getString("name"));
+                category.setDescription((resultSet.getString("description")));
+                category.setTagline(resultSet.getString("tagline"));
+
+                return category;
+            } else return null;
+        } catch (SQLException e) {
+            throw new DatabaseException("Could not select category", e);
+        }
+    }
+
 }

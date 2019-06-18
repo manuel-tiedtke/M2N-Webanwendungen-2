@@ -6,12 +6,19 @@ import org.m2n.webapplications2.exceptions.ValidationException;
 import org.m2n.webapplications2.logging.Logging;
 import org.m2n.webapplications2.models.Flashcard;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
+import javax.ws.rs.*;
+import java.util.List;
 
 @Path("/api/flashcard")
 public class FlashcardController {
+
+    @GET
+    @Produces("application/json")
+    public List<Flashcard> getForCategory(@QueryParam("category") int categoryId) throws DatabaseException {
+        Logging.debug("[FlashcardController] getForCategory");
+
+        return DbFlashcard.getForCategory(categoryId);
+    }
 
     @POST
     @Consumes("application/json")
