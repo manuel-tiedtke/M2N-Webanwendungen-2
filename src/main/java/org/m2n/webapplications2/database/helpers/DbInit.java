@@ -56,10 +56,10 @@ public class DbInit {
                 "VALUES ('Default');");
             statement.addBatch("INSERT INTO category (name, tagline, description)\n" +
                 "VALUES\n" +
-                "('Python', 'Dunno', 'Python is awesome'),\n" +
-                "('Food', 'Dunno', 'Eat! Or you''ll starve!'),\n" +
-                "('Health', 'Dunno', 'See category Food to stay healthy'),\n" +
-                "('Hardware', 'Dunno', 'Hardware Hacking Topics');\n");
+                "('Python', 'Programming Language', 'Python is awesome'),\n" +
+                "('Food', 'Maultaschen', 'Eat! Or you''ll starve!'),\n" +
+                "('Health', 'Sports', 'See category Food to stay healthy'),\n" +
+                "('Hardware', 'Security', 'Hardware Hacking Topics');\n");
             statement.addBatch("INSERT INTO flashcard2category (flashcardId, categoryId)\n" +
                 "VALUES\n" +
                 "(1, 1),\n" +
