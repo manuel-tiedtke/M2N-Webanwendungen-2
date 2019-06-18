@@ -14,12 +14,20 @@ public class Category extends Entity {
         this.name = name;
     }
 
-    public String getDescription() { return description; }
+    public String getDescription() {
+        return description;
+    }
 
-    public void setDescription(String description) { this.description = description; }
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-    public String getTagline() { return tagline; }
+    public String getTagline() {
+        return tagline;
+    }
 
-    public void setTagline(String tagline) { this.tagline = tagline; }
+    public void setTagline(String tagline) {
+        this.tagline = tagline;
+    }
 
 }
