@@ -29,8 +29,8 @@ function loadCategory() {
     getCategory()
         .then(value => {
             document.getElementById('name').value = value.name
-            document.getElementById('tagline').value = value.tagline
-            document.getElementById('description').value = value.description
+            document.getElementById('tagline').value = value.tagline ? value.tagline : ''
+            document.getElementById('description').value = value.description ? value.description : ''
         })
         .catch(reason => console.error(reason))
 }
