@@ -39,6 +39,8 @@ public class DbCategory {
                 Category category = new Category();
                 category.setId(resultSet.getInt("id"));
                 category.setName(resultSet.getString("name"));
+                category.setTagline(resultSet.getString("tagline"));
+                category.setDescription(resultSet.getString("description"));
                 categories.add(category);
             }
 
