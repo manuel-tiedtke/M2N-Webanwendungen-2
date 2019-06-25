@@ -4,17 +4,17 @@ import org.m2n.webapplications2.database.Database;
 import org.m2n.webapplications2.exceptions.DatabaseException;
 import org.m2n.webapplications2.models.Flashcard;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class DbFlashcard {
 
-    public static void create(Flashcard flashcard) throws DatabaseException {
+    public static int create(Flashcard flashcard) throws DatabaseException {
+        Connection connection = Database.getInstance().getConnection();
+
         try {
-            PreparedStatement statement = Database.getInstance().getConnection()
+            PreparedStatement statement = connection
                 .prepareStatement("INSERT INTO flashcard (question, answer) VALUES (?, ?)");
 
             int i = 1;
@@ -22,6 +22,12 @@ public class DbFlashcard {
             statement.setString(i, flashcard.getAnswer());
 
             statement.executeUpdate();
+
+            Statement idStatement = connection.createStatement();
+            ResultSet resultSet = idStatement.executeQuery("SELECT last_insert_rowid() id");
+
+            if (resultSet.next()) return resultSet.getInt("id");
+            else throw new SQLException("Could not get flashcard id after insert");
         } catch (SQLException e) {
             throw new DatabaseException("Could not insert flashcard", e);
         }

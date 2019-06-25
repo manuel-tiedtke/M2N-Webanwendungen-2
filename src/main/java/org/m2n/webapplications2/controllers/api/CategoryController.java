@@ -5,7 +5,6 @@ import org.m2n.webapplications2.exceptions.DatabaseException;
 import org.m2n.webapplications2.exceptions.ValidationException;
 import org.m2n.webapplications2.logging.Logging;
 import org.m2n.webapplications2.models.Category;
-import org.m2n.webapplications2.models.Flashcard;
 
 import javax.ws.rs.*;
 import java.util.List;

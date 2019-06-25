@@ -19,6 +19,13 @@
     <script src="js/add-flashcard.js" defer></script>
 
     <title>Spaced Repetition Trainer</title>
+
+    <template id="tag-template">
+        <span class="badge badge-pill badge-info">
+            <span class="tag">TAG</span>
+            <i class="fa fa-times fa-xs ml-1 delete-icon" onclick="this.parentElement.remove()"></i>
+        </span>
+    </template>
 </head>
 
 <body class="fullscreen">
@@ -52,12 +59,19 @@
                 </div>
                 <div class="form-group">
                     <label for="tags">Tags</label>
-                    <input id="tags" type="text" class="form-control" placeholder="Add tags..."></input>
+                    <div class="input-group">
+                        <input id="tags" type="text" class="form-control" placeholder="Add tags..."></input>
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" onclick="addTag()">Add</button>
+                        </div>
+                    </div>
                 </div>
                 <button class="continue-arrow btn bg-transparent" type="submit">
                     <i class="fa fa-arrow-right"></i>
                 </button>
             </form>
+            <hr class="my-0">
+            <div id="tag-container" class="mt-2 mb-3 text-center"></div>
         </div>
     </div>
 </body>

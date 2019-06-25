@@ -76,6 +76,10 @@ textarea.expanding {
     display: unset;
 }
 
+.delete-icon:hover {
+    color: var(--danger);
+}
+
 @media (min-width: 654px) {
     .hero .heading h1 {
         font-size: 5rem;
