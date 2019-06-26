@@ -125,4 +125,30 @@ public class DbCategory {
         }
     }
 
+    public static List<Category> getForFlashcard(int flashcardId) throws DatabaseException {
+        try {
+            PreparedStatement statement = Database.getInstance().getConnection()
+                .prepareStatement("SELECT c.* FROM category c JOIN flashcard2category f2c ON f2c.categoryId = c.id where f2c.flashcardId = ?");
+
+            int i = 1;
+            statement.setInt(i, flashcardId);
+
+            ResultSet resultSet = statement.executeQuery();
+
+            List<Category> categories = new ArrayList<>();
+            while (resultSet.next()) {
+                Category category = new Category();
+                category.setId(resultSet.getInt("id"));
+                category.setName(resultSet.getString("name"));
+                category.setTagline(resultSet.getString("tagline"));
+                category.setDescription(resultSet.getString("description"));
+                categories.add(category);
+            }
+
+            return categories;
+        } catch (SQLException e) {
+            throw new DatabaseException("Could not select categories for flashcard", e);
+        }
+    }
+
 }

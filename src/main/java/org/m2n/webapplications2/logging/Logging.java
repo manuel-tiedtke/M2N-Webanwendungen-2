@@ -17,4 +17,8 @@ public class Logging {
         System.out.println(message);
     }
 
+    public static Logger getLogger() {
+        return logger;
+    }
+
 }

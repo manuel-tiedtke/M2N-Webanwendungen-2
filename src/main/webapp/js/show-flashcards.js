@@ -5,7 +5,7 @@ function getFlashcards() {
         const request = new XMLHttpRequest()
         request.onload = event => resolve(JSON.parse(request.response))
         request.onerror = event => reject(event)
-        request.open('GET', '/api/flashcard?category=' + categoryId)
+        request.open('GET', '/api/category/' + categoryId + '/flashcards')
         request.send()
     })
 }

@@ -15,14 +15,6 @@ import java.util.List;
 @Path("/api/flashcard")
 public class FlashcardController {
 
-    @GET
-    @Produces("application/json")
-    public List<Flashcard> getForCategory(@QueryParam("category") int categoryId) throws DatabaseException {
-        Logging.debug("[FlashcardController] getForCategory");
-
-        return DbFlashcard.getForCategory(categoryId);
-    }
-
     @POST
     @Consumes("application/json")
     @Produces("application/json")
@@ -35,6 +27,15 @@ public class FlashcardController {
             throw new ValidationException("Not a valid flashcard");
 
         return DbFlashcard.create(flashcard);
+    }
+
+    @GET
+    @Path("/{id}/categories")
+    @Produces("application/json")
+    public List<Category> getCategories(@PathParam("id") int flashcardId) throws DatabaseException {
+        Logging.debug("[FlashcardController] getCategories");
+
+        return DbCategory.getForFlashcard(flashcardId);
     }
 
     @POST

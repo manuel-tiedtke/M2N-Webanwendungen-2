@@ -1,10 +1,12 @@
 package org.m2n.webapplications2.controllers.api;
 
 import org.m2n.webapplications2.database.helpers.DbCategory;
+import org.m2n.webapplications2.database.helpers.DbFlashcard;
 import org.m2n.webapplications2.exceptions.DatabaseException;
 import org.m2n.webapplications2.exceptions.ValidationException;
 import org.m2n.webapplications2.logging.Logging;
 import org.m2n.webapplications2.models.Category;
+import org.m2n.webapplications2.models.Flashcard;
 
 import javax.ws.rs.*;
 import java.util.List;
@@ -40,5 +42,14 @@ public class CategoryController {
             throw new ValidationException("Not a valid category");
 
         DbCategory.update(categoryId, category);
+    }
+
+    @GET
+    @Path("/{id}/flashcards")
+    @Produces("application/json")
+    public List<Flashcard> getFlashcards(@PathParam("id") int categoryId) throws DatabaseException {
+        Logging.debug("[CategoryController] getFlashcards");
+
+        return DbFlashcard.getForCategory(categoryId);
     }
 }
