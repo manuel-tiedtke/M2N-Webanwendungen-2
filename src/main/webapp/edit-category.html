@@ -16,35 +16,9 @@
 
     <link rel="stylesheet" href="css/theme.css">
     <script src="js/textarea-expander.js" defer></script>
-    <script src="js/show-flashcards.js" defer></script>
+    <script src="js/edit-category.js" defer></script>
 
     <title>Spaced Repetition Trainer</title>
-
-    <template id="flashcard-template">
-        <div class="border border-darkshadow rounded w-75 px-3 bg-light mb-5">
-            <form class="position-relative mt-2" action="dashboard.html">
-                <div class="row">
-                    <div class="form-group col-md">
-                        <label>Question</label>
-                        <textarea rows="4" class="form-control expanding" disabled>QUESTION</textarea>
-                    </div>
-                    <div class="form-group col-md">
-                        <label>Answer</label>
-                        <textarea rows="4" class="form-control expanding" disabled>ANSWER</textarea>
-                    </div>
-                </div>
-            </form>
-            <hr class="my-0">
-            <div id="tag-container" class="mt-2 mb-3 text-center"></div>
-        </div>
-    </template>
-
-    <template id="tag-template">
-        <span class="badge badge-pill badge-info">
-            <span class="tag">TAG</span>
-            <i class="fa fa-times fa-xs ml-1 delete-icon" onclick="this.parentElement.remove()"></i>
-        </span>
-    </template>
 </head>
 
 <body class="fullscreen">
@@ -62,9 +36,27 @@
         </div>
     </nav>
 
-    <h1 class="text-center mt-4">Your <span class="text-primary">FlashCards</span></h1>
-    <h2 id="title" class="mt-2 text-center">TITLE</h2>
-    <div id="flashcard-container" class="d-flex flex-fill flex-column align-items-center justify-content-center">
+    <h1 class="text-center mt-4">Edit a <span class="text-primary">Category</span></h1>
+    <div class="d-flex flex-fill flex-column align-items-center justify-content-center">
+        <div class="shadow rounded w-75 px-3 bg-light">
+            <form class="position-relative mt-2" onsubmit="editCategory(); return false">
+                <div class="form-group">
+                    <label for="name">Title</label>
+                    <input id="name" type="text" class="form-control" placeholder="Set a name..." autofocus required></input>
+                </div>
+                <div class="form-group">
+                    <label for="tagline">Subtitle</label>
+                    <input id="tagline" type="text" class="form-control" placeholder="Add a tagline..."></input>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" rows="4" class="form-control expanding" placeholder="Add a description..."></textarea>
+                </div>
+                <button class="continue-arrow btn bg-transparent" type="submit">
+                    <i class="fa fa-arrow-right"></i>
+                </button>
+            </form>
+        </div>
     </div>
 </body>
 

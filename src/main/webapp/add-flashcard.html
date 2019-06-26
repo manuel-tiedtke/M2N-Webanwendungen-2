@@ -16,8 +16,16 @@
 
     <link rel="stylesheet" href="css/theme.css">
     <script src="js/textarea-expander.js" defer></script>
+    <script src="js/add-flashcard.js" defer></script>
 
     <title>Spaced Repetition Trainer</title>
+
+    <template id="tag-template">
+        <span class="badge badge-pill badge-info">
+            <span class="tag">TAG</span>
+            <i class="fa fa-times fa-xs ml-1 delete-icon" onclick="this.parentElement.remove()"></i>
+        </span>
+    </template>
 </head>
 
 <body class="fullscreen">
@@ -38,27 +46,32 @@
     <h1 class="text-center mt-4">Add a <span class="text-primary">FlashCard</span></h1>
     <div class="d-flex flex-fill flex-column align-items-center justify-content-center">
         <div class="shadow rounded w-75 px-3 bg-light">
-            <form class="position-relative mt-2" action="dashboard.html">
+            <form class="position-relative mt-2" onsubmit="addFlashcard(); return false">
                 <div class="row">
                     <div class="form-group col-md">
-                        <label>Question</label>
-                        <textarea rows="4" class="form-control expanding" placeholder="Type your question here..."
-                            autofocus></textarea>
+                        <label for="question">Question</label>
+                        <textarea id="question" rows="4" class="form-control expanding" placeholder="Type your question here..." autofocus required></textarea>
                     </div>
                     <div class="form-group col-md">
-                        <label>Answer</label>
-                        <textarea rows="4" class="form-control expanding"
-                            placeholder="Type your answer here..."></textarea>
+                        <label for="answer">Answer</label>
+                        <textarea id="answer" rows="4" class="form-control expanding" placeholder="Type your answer here..." required></textarea>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>Tags</label>
-                    <input type="text" class="form-control" placeholder="Add tags..."></textarea>
+                    <label for="tags">Tags</label>
+                    <div class="input-group">
+                        <input id="tags" type="text" class="form-control" placeholder="Add tags..."></input>
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" onclick="addTag()">Add</button>
+                        </div>
+                    </div>
                 </div>
                 <button class="continue-arrow btn bg-transparent" type="submit">
                     <i class="fa fa-arrow-right"></i>
                 </button>
             </form>
+            <hr class="my-0">
+            <div id="tag-container" class="mt-2 mb-3 text-center"></div>
         </div>
     </div>
 </body>

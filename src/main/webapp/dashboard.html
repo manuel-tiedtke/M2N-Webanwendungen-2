@@ -15,8 +15,26 @@
     <script src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" defer></script>
 
     <link rel="stylesheet" href="css/theme.css">
+    <script src="js/dashboard.js" defer></script>
 
     <title>Spaced Repetition Trainer</title>
+
+    <template id="category-template">
+        <div class="card category-card m-3">
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title">
+                    <span>TITLE</span>
+                    <a class="float-right edit-card"><i class="fa fa-edit fa-xs"></i></a>
+                </h5>
+                <h6 class="card-subtitle mb-2 text-muted">TAGLINE</h6>
+                <p class="card-text">DESCRIPTION</p>
+                <div class="mt-auto">
+                    <a class="card-link text-secondary show-cards">Show cards</a>
+                    <a href="train-flashcard.html" class="card-link">Memorize</a>
+                </div>
+            </div>
+        </div>
+    </template>
 </head>
 
 <body>
@@ -35,65 +53,7 @@
     </nav>
 
     <h1 class="text-center mt-4"><span class="text-primary">FlashCard</span> Dashboard</h1>
-    <div class="d-flex flex-wrap p-4">
-        <div class="card category-card m-3">
-            <div class="card-body d-flex flex-column">
-                <h5 class="card-title">Dutch</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Fit in 30 days</h6>
-                <p class="card-text">The quick course & language trainer</p>
-                <div class="mt-auto">
-                    <a href="show-flashcards.html" class="card-link text-secondary">Show cards</a>
-                    <a href="train-flashcard.html" class="card-link">Memorize</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="card category-card m-3">
-            <div class="card-body">
-                <h5 class="card-title">Reverse Engineering</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Hacking & cracking</h6>
-                <p class="card-text">If you want to know how something works, you take it apart very carefullly.</p>
-                <div class="mt-auto">
-                    <a href="show-flashcards.html" class="card-link text-secondary">Show cards</a>
-                    <a href="train-flashcard.html" class="card-link">Memorize</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="card category-card m-3">
-            <div class="card-body">
-                <h5 class="card-title">Dummy</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Subtitle</h6>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <div class="mt-auto">
-                    <a href="show-flashcards.html" class="card-link text-secondary">Show cards</a>
-                    <a href="train-flashcard.html" class="card-link">Memorize</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="card category-card m-3">
-            <div class="card-body">
-                <h5 class="card-title">Dummy</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Subtitle</h6>
-                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, beatae!</p>
-                <div class="mt-auto">
-                    <a href="show-flashcards.html" class="card-link text-secondary">Show cards</a>
-                    <a href="train-flashcard.html" class="card-link">Memorize</a>
-                </div>
-            </div>
-        </div>
-        <div class="card category-card m-3">
-            <div class="card-body d-flex flex-column">
-                <h5 class="card-title">Dummy</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Subtitle</h6>
-                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, beatae!</p>
-                <div class="mt-auto">
-                    <a href="show-flashcards.html" class="card-link text-secondary">Show cards</a>
-                    <a href="train-flashcard.html" class="card-link">Memorize</a>
-                </div>
-            </div>
-        </div>
+    <div id="category-container" class="d-flex flex-wrap p-4">
         <div class="card category-card m-3">
             <div class="card-body" style="height: 11rem;">
                 <h5 class="card-title text-muted">Add cards</h5>
