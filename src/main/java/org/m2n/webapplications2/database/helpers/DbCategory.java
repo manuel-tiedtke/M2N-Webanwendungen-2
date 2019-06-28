@@ -57,7 +57,7 @@ public class DbCategory {
     public static List<Category> getAll() throws DatabaseException {
         try {
             PreparedStatement statement = Database.getInstance().getConnection()
-                .prepareStatement("SELECT * FROM category");
+                .prepareStatement("SELECT * FROM category ORDER BY name");
 
             ResultSet resultSet = statement.executeQuery();
 
@@ -128,7 +128,7 @@ public class DbCategory {
     public static List<Category> getForFlashcard(int flashcardId) throws DatabaseException {
         try {
             PreparedStatement statement = Database.getInstance().getConnection()
-                .prepareStatement("SELECT c.* FROM category c JOIN flashcard2category f2c ON f2c.categoryId = c.id where f2c.flashcardId = ?");
+                .prepareStatement("SELECT c.* FROM category c JOIN flashcard2category f2c ON f2c.categoryId = c.id where f2c.flashcardId = ? ORDER BY name");
 
             int i = 1;
             statement.setInt(i, flashcardId);

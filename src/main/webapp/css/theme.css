@@ -44,7 +44,7 @@ body.fullscreen {
 }
 
 textarea.expanding {
-    transition: height ease-in-out 0.1s;
+    transition: height ease-out 0.1s;
 }
 
 .continue-arrow {

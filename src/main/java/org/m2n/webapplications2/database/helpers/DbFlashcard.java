@@ -58,7 +58,7 @@ public class DbFlashcard {
     public static List<Flashcard> getForCategory(int categoryId) throws DatabaseException {
         try {
             PreparedStatement statement = Database.getInstance().getConnection()
-                .prepareStatement("SELECT f.* FROM flashcard f JOIN flashcard2category f2c ON f2c.flashcardId = f.id where f2c.categoryId = ?");
+                .prepareStatement("SELECT f.* FROM flashcard f JOIN flashcard2category f2c ON f2c.flashcardId = f.id where f2c.categoryId = ? ORDER BY date(dueDate)");
 
             int i = 1;
             statement.setInt(i, categoryId);
