@@ -33,8 +33,8 @@ function getFlashcardCategories(flashcardId) {
 function addFlashcardToHtml(flashcard, categories) {
     const template = document.getElementById('flashcard-template').content
 
-    template.querySelector('.question').innerText = flashcard.question
-    template.querySelector('.answer').innerText = flashcard.answer
+    template.querySelector('.question').value = flashcard.question
+    template.querySelector('.answer').value = flashcard.answer
 
     const flashcardHtml = document.importNode(template, true)
     const container = document.getElementById('flashcard-container')
@@ -66,5 +66,5 @@ async function loadFlashcards() {
     }
 }
 
-loadFlashcards()
 loadCategory()
+loadFlashcards()

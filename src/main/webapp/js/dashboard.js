@@ -16,6 +16,7 @@ function addCategoryToHtml(category) {
     template.querySelector('p').innerText = category.description ? category.description : ''
     template.querySelector('.edit-card').href = 'edit-category.html?category=' + category.id
     template.querySelector('.show-cards').href = 'show-flashcards.html?category=' + category.id
+    template.querySelector('.train-cards').href = 'train-flashcards.html?category=' + category.id
 
     const categoryHtml = document.importNode(template, true)
     const container = document.getElementById('category-container')

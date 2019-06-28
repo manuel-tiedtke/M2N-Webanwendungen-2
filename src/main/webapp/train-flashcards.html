@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" defer></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" defer></script>
+
+    <!-- Font Awesome -->
+    <script src="https://use.fontawesome.com/releases/v5.9.0/js/all.js" defer></script>
+
+    <link rel="stylesheet" href="css/theme.css">
+    <script src="js/textarea-expander.js" defer></script>
+    <script src="js/train-flashcards.js" defer></script>
+
+    <!-- graduation-cap.svg.png: Font Awesome Free 5.9.0 by @fontawesome - https://fontawesome.com // License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->
+    <link rel="icon" href="images/graduation-cap.svg.png">
+    <link rel="icon" href="images/graduation-cap.svg">
+
+    <title>Spaced Repetition Trainer</title>
+
+    <template id="tag-template">
+        <span class="badge badge-pill badge-info">
+            <span class="tag">TAG</span>
+        </span>
+    </template>
+</head>
+
+<body class="fullscreen">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">Spaced Repetition Trainer</a>
+        <button class="navbar-toggler border-0" data-toggle="collapse" data-target="#navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navigation">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="dashboard.html">Dashboard</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <h1 class="text-center mt-4">Train <span class="text-primary">FlashCards</span></h1>
+    <h2 id="title" class="mt-2 text-center">TITLE</h2>
+    <div class="d-flex flex-fill flex-column align-items-center justify-content-center">
+        <div class="shadow rounded w-75 px-3 bg-light mb-5">
+            <form class="position-relative mt-2" onsubmit="checkAnswer(); return false">
+                <div class="row">
+                    <div class="form-group col-md">
+                        <label for="question">Question</label>
+                        <textarea id="question" rows="4" class="form-control expanding" disabled></textarea>
+                    </div>
+                    <div class="form-group col-md">
+                        <label for="answer">Answer</label>
+                        <textarea id="answer" rows="4" class="form-control expanding" placeholder="Type your answer here..." autofocus required></textarea>
+                    </div>
+                </div>
+                <div id="correct-answer-group" class="form-group d-none">
+                    <hr class="mt-0 mb-2">
+                    <label for="correct-answer">Correct Answer</label>
+                    <div class="input-group">
+                        <textarea id="correct-answer" rows="4" class="form-control expanding" disabled></textarea>
+                        <div class="input-group-append">
+                            <div class="btn-group-vertical">
+                                <button class="btn btn-primary" type="button" onclick="rateAnswer(3)">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </button>
+                                <button class="btn btn-success" type="button" onclick="rateAnswer(2)">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                                <button class="btn btn-warning" type="button" onclick="rateAnswer(1)">
+                                    <i class="far fa-circle"></i>
+                                </button>
+                                <button class="btn btn-danger" type="button" onclick="rateAnswer(0)">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button id="check-answer" class="continue-arrow btn bg-transparent" type="submit">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </form>
+            <hr class="my-0">
+            <div id="tag-container" class="mt-1 mb-2 text-center"></div>
+        </div>
+    </div>
+</body>
+
+</html>

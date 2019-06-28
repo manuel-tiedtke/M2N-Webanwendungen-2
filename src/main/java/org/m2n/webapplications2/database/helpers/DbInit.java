@@ -16,7 +16,9 @@ public class DbInit {
                 "    id INTEGER PRIMARY KEY AUTOINCREMENT,\n" +
                 "    question TEXT NOT NULL,\n" +
                 "    answer TEXT NOT NULL,\n" +
-                "    dueDate TEXT DEFAULT (date('now'))\n" +
+                "    dueDate TEXT DEFAULT (date('now')),\n" +
+                "    interval INTEGER DEFAULT 1,\n" +
+                "    easiness REAL DEFAULT 2.718\n" +
                 ");");
             statement.addBatch("CREATE TABLE category (\n" +
                 "    id INTEGER PRIMARY KEY AUTOINCREMENT,\n" +
@@ -48,9 +50,9 @@ public class DbInit {
                 "VALUES ('U wanna test the default?', 'Yes');");
             statement.addBatch("INSERT INTO flashcard (question, answer, dueDate)\n" +
                 "VALUES\n" +
-                "('How ru doin?', 'Good', '2021-01-01 10:00:00'),\n" +
-                "('Was ist 1 + 1?', '3', '2021-01-01 18:00:00'),\n" +
-                "('Ja oder Nein?', 'Nein', '2021-01-01 12:00:00'),\n" +
+                "('How ru doin?', 'Good', date('2021-01-01 10:00:00')),\n" +
+                "('Was ist 1 + 1?', '3', date('2021-01-01 18:00:00')),\n" +
+                "('Ja oder Nein?', 'Nein', date('now','-5 days')),\n" +
                 "('Ist die Welt klein?', 'Ja', date('now','+5 days'));");
             statement.addBatch("INSERT INTO category (name)\n" +
                 "VALUES ('Default');");

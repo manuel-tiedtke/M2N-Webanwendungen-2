@@ -80,6 +80,18 @@ textarea.expanding {
     color: var(--danger);
 }
 
+.input-group-append .btn-group-vertical>.btn:first-child {
+    border-top-left-radius: 0;
+}
+
+.input-group-append .btn-group-vertical>.btn:last-child {
+    border-bottom-left-radius: 0;
+}
+
+.input-group-append .btn-group-vertical>.btn+.btn {
+    margin-left: 0;
+}
+
 @media (min-width: 654px) {
     .hero .heading h1 {
         font-size: 5rem;

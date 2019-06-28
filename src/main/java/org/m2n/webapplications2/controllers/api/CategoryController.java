@@ -47,9 +47,11 @@ public class CategoryController {
     @GET
     @Path("/{id}/flashcards")
     @Produces("application/json")
-    public List<Flashcard> getFlashcards(@PathParam("id") int categoryId) throws DatabaseException {
+    public List<Flashcard> getFlashcards(@PathParam("id") int categoryId,
+                                         @QueryParam("onlyDue") @DefaultValue("false") boolean onlyDue,
+                                         @QueryParam("limit") @DefaultValue("-1") int limit) throws DatabaseException {
         Logging.debug("[CategoryController] getFlashcards");
 
-        return DbFlashcard.getForCategory(categoryId);
+        return DbFlashcard.getForCategory(categoryId, onlyDue, limit);
     }
 }
