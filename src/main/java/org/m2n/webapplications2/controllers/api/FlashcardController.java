@@ -40,6 +40,13 @@ public class FlashcardController {
         return DbFlashcard.create(flashcard);
     }
 
+    /*
+     * This function implements a custom version of the SuperMemo SM-2 algorithm:
+     *
+     *     Algorithm SM-2, (C) Copyright SuperMemo World, 1991.
+     *     - http://www.supermemo.com
+     *     - http://www.supermemo.eu
+     */
     @POST
     @Path("/{id}/answer")
     @Consumes("application/json")
