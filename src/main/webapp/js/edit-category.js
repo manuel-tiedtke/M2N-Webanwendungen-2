@@ -25,14 +25,11 @@ function getCategory() {
     })
 }
 
-function loadCategory() {
-    getCategory()
-        .then(value => {
-            document.getElementById('name').value = value.name
-            document.getElementById('tagline').value = value.tagline ? value.tagline : ''
-            document.getElementById('description').value = value.description ? value.description : ''
-        })
-        .catch(reason => console.error(reason))
+async function loadCategory() {
+    const category = await getCategory()
+    document.getElementById('name').value = category.name
+    document.getElementById('tagline').value = category.tagline ? category.tagline : ''
+    document.getElementById('description').value = category.description ? category.description : ''
 }
 
 loadCategory()

@@ -22,12 +22,9 @@ function addCategoryToHtml(category) {
     container.insertBefore(categoryHtml, container.children[container.children.length - 1])
 }
 
-function loadCategories() {
-    getCategories()
-        .then(value => {
-            for (const category of value) addCategoryToHtml(category)
-        })
-        .catch(reason => console.error(reason))
+async function loadCategories() {
+    const categories = await getCategories()
+    for (const category of categories) addCategoryToHtml(category)
 }
 
 loadCategories()

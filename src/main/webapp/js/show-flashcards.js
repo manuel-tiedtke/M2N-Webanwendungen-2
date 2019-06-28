@@ -1,21 +1,21 @@
 const categoryId = new URL(location.href).searchParams.get('category')
 
-function getFlashcards() {
-    return new Promise((resolve, reject) => {
-        const request = new XMLHttpRequest()
-        request.onload = event => resolve(JSON.parse(request.response))
-        request.onerror = event => reject(event)
-        request.open('GET', '/api/category/' + categoryId + '/flashcards')
-        request.send()
-    })
-}
-
 function getCategory() {
     return new Promise((resolve, reject) => {
         const request = new XMLHttpRequest()
         request.onload = event => resolve(JSON.parse(request.response))
         request.onerror = event => reject(event)
         request.open('GET', '/api/category/' + categoryId)
+        request.send()
+    })
+}
+
+function getFlashcards() {
+    return new Promise((resolve, reject) => {
+        const request = new XMLHttpRequest()
+        request.onload = event => resolve(JSON.parse(request.response))
+        request.onerror = event => reject(event)
+        request.open('GET', '/api/category/' + categoryId + '/flashcards')
         request.send()
     })
 }
@@ -31,22 +31,14 @@ function addFlashcardToHtml(flashcard) {
     container.insertBefore(flashcardHtml, container.children[container.children.length - 1])
 }
 
-function loadFlashcards() {
-    getFlashcards()
-        .then(value => {
-            for (const flashcard of value) {
-                addFlashcardToHtml(flashcard)
-            }
-        })
-        .catch(reason => console.error(reason))
+async function loadCategory() {
+    const category = await getCategory()
+    document.getElementById('title').innerText = category.name
 }
 
-function loadCategory() {
-    getCategory()
-        .then(value => {
-            document.getElementById('title').innerText = value.name
-        })
-        .catch(reason => console.error(reason))
+async function loadFlashcards() {
+    const flashcards = await getFlashcards()
+    for (const flashcard of flashcards) addFlashcardToHtml(flashcard, categories)
 }
 
 loadFlashcards()

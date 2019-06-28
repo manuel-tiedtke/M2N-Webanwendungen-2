@@ -1,3 +1,14 @@
+function addTag() {
+    const tagInput = document.getElementById('tags')
+
+    const template = document.getElementById('tag-template').content
+    template.querySelector('.tag').innerText = tagInput.value
+
+    const tagHtml = document.importNode(template, true)
+    const container = document.getElementById('tag-container')
+    container.appendChild(tagHtml)
+}
+
 function createFlashcard(flashcard) {
     return new Promise((resolve, reject) => {
         const request = new XMLHttpRequest()
@@ -9,7 +20,7 @@ function createFlashcard(flashcard) {
     })
 }
 
-function addFlashcard() {
+async function addFlashcard() {
     const flashcard = {
         question: document.getElementById('question').value,
         answer: document.getElementById('answer').value
@@ -26,25 +37,11 @@ function addFlashcard() {
         return
     }
 
-   createFlashcard(flashcard)
-   .then(value => {
-        const request = new XMLHttpRequest()
-        request.onload = event => location.href = 'dashboard.html'
-        request.onerror = event => console.error(event)
-        request.open('POST', '/api/flashcard/' + value + '/categories')
-        request.setRequestHeader('Content-Type', 'application/json')
-        request.send(JSON.stringify(categories))
-   })
-   .catch(reason => console.error(reason))
-}
-
-function addTag() {
-    const tagInput = document.getElementById('tags')
-
-    const template = document.getElementById('tag-template').content
-    template.querySelector('.tag').innerText = tagInput.value
-
-    const tagHtml = document.importNode(template, true)
-    const container = document.getElementById('tag-container')
-    container.appendChild(tagHtml)
+    const flashcardId = await createFlashcard(flashcard)
+    const request = new XMLHttpRequest()
+    request.onload = event => location.href = 'dashboard.html'
+    request.onerror = event => console.error(event)
+    request.open('POST', '/api/flashcard/' + flashcardId + '/categories')
+    request.setRequestHeader('Content-Type', 'application/json')
+    request.send(JSON.stringify(categories))
 }
