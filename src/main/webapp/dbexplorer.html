@@ -50,15 +50,16 @@
                     <div class="input-group-append">
                         <button class="btn btn-outline-secondary" type="button" onclick="execute('query')">Query</button>
                         <button class="btn btn-outline-secondary" type="button" onclick="execute('update')">Update</button>
+                        <button class="btn btn-outline-info" type="button" onclick="getAllStatement()">
+                            <i class="fas fa-table"></i>
+                        </button>
                     </div>
                 </div>
             </div>
         </form>
         <table class="table table-sm table-striped">
-            <thead id="columns" class="thead-dark">
-            </thead>
-            <tbody id="data">
-            </tbody>
+            <thead id="columns" class="thead-dark"></thead>
+            <tbody id="data"></tbody>
         </table>
     </div>
 </body>

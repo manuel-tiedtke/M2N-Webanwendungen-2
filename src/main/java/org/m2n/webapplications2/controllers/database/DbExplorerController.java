@@ -2,6 +2,7 @@ package org.m2n.webapplications2.controllers.database;
 
 import org.m2n.webapplications2.database.Database;
 import org.m2n.webapplications2.exceptions.DatabaseException;
+import org.m2n.webapplications2.logging.Logging;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
@@ -21,6 +22,8 @@ public class DbExplorerController {
     @Consumes("text/sql")
     @Produces("application/json")
     public QueryResult query(String statement) throws DatabaseException {
+        Logging.debug("[DbExplorerController] query");
+
         Connection connection = Database.getInstance().getConnection();
 
         try {
@@ -58,6 +61,8 @@ public class DbExplorerController {
     @Consumes("text/sql")
     @Produces("application/json")
     public QueryResult update(String statement) throws DatabaseException {
+        Logging.debug("[DbExplorerController] update");
+
         Connection connection = Database.getInstance().getConnection();
 
         try {

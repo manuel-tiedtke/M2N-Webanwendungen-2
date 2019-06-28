@@ -33,3 +33,9 @@ async function execute(mode) {
         tblData.appendChild(rowHtml)
     }
 }
+
+function getAllStatement() {
+    document.getElementById('sql').value = 'SELECT f.*, c.* FROM flashcard f\n' +
+        'JOIN flashcard2category f2c ON f2c.flashcardId = f.id\n' +
+        'JOIN category c ON c.id = f2c.categoryId'
+}
