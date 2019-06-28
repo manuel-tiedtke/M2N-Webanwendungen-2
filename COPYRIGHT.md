@@ -1,6 +1,6 @@
 # Third-party licenses
 
-**src/main/webapp/images/graduation-cap.svg.png** \
+**src/main/webapp/images/graduation-cap.svg** \
 **src/main/webapp/images/graduation-cap.svg.png**
 
     Font Awesome Free 5.9.0 by @fontawesome - https://fontawesome.com
