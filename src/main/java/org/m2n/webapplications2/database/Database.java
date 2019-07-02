@@ -6,6 +6,7 @@ import org.m2n.webapplications2.logging.Logging;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Database {
@@ -26,6 +27,7 @@ public class Database {
         }
 
         try {
+//            connection = DriverManager.getConnection("jdbc:sqlite:/tmp/db.db");
             connection = DriverManager.getConnection("jdbc:sqlite::memory:");
         } catch (SQLException e) {
             throw new DatabaseException("Could not acquire a database connection", e);
@@ -35,8 +37,19 @@ public class Database {
     private Database init() throws DatabaseException {
         Logging.debug("[Database] init");
 
-        DbInit.createSchema();
-        DbInit.insertTestData();
+        try {
+            ResultSet resultSet = instance.getConnection().createStatement().executeQuery("SELECT version FROM app");
+
+            if (resultSet.next()) {
+                String dbVersion = resultSet.getString("version");
+                Logging.debug("[Database] Found existing database - Version " + dbVersion);
+            } else throw new DatabaseException("Database invalid", null);
+        } catch (SQLException e) {
+            Logging.debug("[Database] Initializing new database");
+
+            DbInit.createSchema();
+            DbInit.insertTestData();
+        }
 
         return this;
     }
